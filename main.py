@@ -110,7 +110,9 @@ async def new(ctx, *, args = None):
     with open("data.json", 'w') as f:
         json.dump(data, f)
     
-    await ctx.send("Your ticket has been created at {}".format(ticket_channel.mention))
+    created_em = discord.Embed(title="Auroris Tickets", description="Your ticket has been created at {}".format(ticket_channel.mention), color=0x00a8ff)
+    
+    await ctx.send(embed=created_em)
 
 @bot.command()
 async def close(ctx):
@@ -125,8 +127,10 @@ async def close(ctx):
             return message.author == ctx.author and message.channel == ctx.channel and message.content.lower() == "close"
 
         try:
+
+            em = discord.Embed(title="Auroris Tickets", description="Are you sure you want to close this ticket? Reply with `close` if you are sure.", color=0x00a8ff)
         
-            await ctx.send("Are you sure you want to close this ticket? Reply with `close` if you are sure.")
+            await ctx.send(embed=em)
             await bot.wait_for('message', check=check, timeout=60)
             await ctx.channel.delete()
 
@@ -137,7 +141,8 @@ async def close(ctx):
                 json.dump(data, f)
         
         except asyncio.TimeoutError:
-            await ctx.send("You have run out of time to close this ticket. Please run the command again.")
+            em = discord.Embed(title="Auroris Tickets", description="You have run out of time to close this ticket. Please run the command again.", color=0x00a8ff)
+            await ctx.send(embed=em)
 
         
 
@@ -171,17 +176,22 @@ async def addaccess(ctx, role_id=None):
 
                 with open('data.json', 'w') as f:
                     json.dump(data, f)
+                
+                em = discord.Embed(title="Auroris Tickets", description="You have successfully added `{}` to the list of roles with access to tickets.".format(role.name), color=0x00a8ff)
 
-                await ctx.send("You have successfully added `{}` to the list of roles with access to tickets.".format(role.name))
+                await ctx.send(embed=em)
 
             except:
-                await ctx.send("That isn't a valid role ID. Please try again with a valid role ID.")
+                em = discord.Embed(title="Auroris Tickets", description="That isn't a valid role ID. Please try again with a valid role ID.")
+                await ctx.send(embed=em)
         
         else:
-            await ctx.send("That role already has access to tickets!")
+            em = discord.Embed(title="Auroris Tickets", description="That role already has access to tickets!", color=0x00a8ff)
+            await ctx.send(embed=em)
     
     else:
-        await ctx.send("Sorry, you don't have permission to run that command.")
+        em = discord.Embed(title="Auroris Tickets", description="Sorry, you don't have permission to run that command.", color=0x00a8ff)
+        await ctx.send(embed=em)
 
 @bot.command()
 async def delaccess(ctx, role_id=None):
@@ -218,16 +228,22 @@ async def delaccess(ctx, role_id=None):
                 with open('data.json', 'w') as f:
                     json.dump(data, f)
 
-                await ctx.send("You have successfully removed `{}` from the list of roles with access to tickets.".format(role.name))
+                em = discord.Embed(title="Auroris Tickets", description="You have successfully removed `{}` from the list of roles with access to tickets.".format(role.name), color=0x00a8ff)
+
+                await ctx.send(embed=em)
             
             else:
-                await ctx.send("That role already doesn't have access to tickets!")
+                
+                em = discord.Embed(title="Auroris Tickets", description="That role already doesn't have access to tickets!", color=0x00a8ff)
+                await ctx.send(embed=em)
 
         except:
-            await ctx.send("That isn't a valid role ID. Please try again with a valid role ID.")
+            em = discord.Embed(title="Auroris Tickets", description="That isn't a valid role ID. Please try again with a valid role ID.")
+            await ctx.send(embed=em)
     
     else:
-        await ctx.send("Sorry, you don't have permission to run that command.")
+        em = discord.Embed(title="Auroris Tickets", description="Sorry, you don't have permission to run that command.", color=0x00a8ff)
+        await ctx.send(embed=em)
 
 @bot.command()
 async def addpingedrole(ctx, role_id=None):
@@ -261,16 +277,21 @@ async def addpingedrole(ctx, role_id=None):
                 with open('data.json', 'w') as f:
                     json.dump(data, f)
 
-                await ctx.send("You have successfully added `{}` to the list of roles that get pinged when new tickets are created!".format(role.name))
+                em = discord.Embed(title="Auroris Tickets", description="You have successfully added `{}` to the list of roles that get pinged when new tickets are created!".format(role.name), color=0x00a8ff)
+
+                await ctx.send(embed=em)
 
             except:
-                await ctx.send("That isn't a valid role ID. Please try again with a valid role ID.")
+                em = discord.Embed(title="Auroris Tickets", description="That isn't a valid role ID. Please try again with a valid role ID.")
+                await ctx.send(embed=em)
             
         else:
-            await ctx.send("That role already receives pings when tickets are created.")
+            em = discord.Embed(title="Auroris Tickets", description="That role already receives pings when tickets are created.", color=0x00a8ff)
+            await ctx.send(embed=em)
     
     else:
-        await ctx.send("Sorry, you don't have permission to run that command.")
+        em = discord.Embed(title="Auroris Tickets", description="Sorry, you don't have permission to run that command.", color=0x00a8ff)
+        await ctx.send(embed=em)
 
 @bot.command()
 async def delpingedrole(ctx, role_id=None):
@@ -308,16 +329,20 @@ async def delpingedrole(ctx, role_id=None):
                 with open('data.json', 'w') as f:
                     json.dump(data, f)
 
-                await ctx.send("You have successfully removed `{}` from the list of roles that get pinged when new tickets are created.".format(role.name))
+                em = discord.Embed(title="Auroris Tickets", description="You have successfully removed `{}` from the list of roles that get pinged when new tickets are created.".format(role.name), color=0x00a8ff)
+                await ctx.send(embed=em)
             
             else:
-                await ctx.send("That role already isn't getting pinged when new tickets are created!")
+                em = discord.Embed(title="Auroris Tickets", description="That role already isn't getting pinged when new tickets are created!", color=0x00a8ff)
+                await ctx.send(embed=em)
 
         except:
-            await ctx.send("That isn't a valid role ID. Please try again with a valid role ID.")
+            em = discord.Embed(title="Auroris Tickets", description="That isn't a valid role ID. Please try again with a valid role ID.")
+            await ctx.send(embed=em)
     
     else:
-        await ctx.send("Sorry, you don't have permission to run that command.")
+        em = discord.Embed(title="Auroris Tickets", description="Sorry, you don't have permission to run that command.", color=0x00a8ff)
+        await ctx.send(embed=em)
 
 
 @bot.command()
@@ -335,11 +360,13 @@ async def addadminrole(ctx, role_id=None):
 
         with open('data.json', 'w') as f:
             json.dump(data, f)
-
-        await ctx.send("You have successfully added `{}` to the list of roles that can run admin-level commands!".format(role.name))
+        
+        em = discord.Embed(title="Auroris Tickets", description="You have successfully added `{}` to the list of roles that can run admin-level commands!".format(role.name), color=0x00a8ff)
+        await ctx.send(embed=em)
 
     except:
-        await ctx.send("That isn't a valid role ID. Please try again with a valid role ID.")
+        em = discord.Embed(title="Auroris Tickets", description="That isn't a valid role ID. Please try again with a valid role ID.")
+        await ctx.send(embed=em)
 
 @bot.command()
 @has_permissions(administrator=True)
@@ -362,13 +389,17 @@ async def deladminrole(ctx, role_id=None):
 
             with open('data.json', 'w') as f:
                 json.dump(data, f)
+            
+            em = discord.Embed(title="Auroris Tickets", description="You have successfully removed `{}` from the list of roles that get pinged when new tickets are created.".format(role.name), color=0x00a8ff)
 
-            await ctx.send("You have successfully removed `{}` from the list of roles that get pinged when new tickets are created.".format(role.name))
+            await ctx.send(embed=em)
         
         else:
-            await ctx.send("That role isn't getting pinged when new tickets are created!")
+            em = discord.Embed(title="Auroris Tickets", description="That role isn't getting pinged when new tickets are created!", color=0x00a8ff)
+            await ctx.send(embed=em)
 
     except:
-        await ctx.send("That isn't a valid role ID. Please try again with a valid role ID.")
+        em = discord.Embed(title="Auroris Tickets", description="That isn't a valid role ID. Please try again with a valid role ID.")
+        await ctx.send(embed=em)
 
 bot.run("TOKEN")
