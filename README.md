@@ -7,12 +7,17 @@ This is a Discord bot meant to handle tickets for a server.
 1. Download python from https://www.python.org/downloads/
 2. Run the installer.
 3. Go into command prompt and enter the following code command
-  **Windows:** `py -m pip install discord asyncio`
-  **MacOS:** `python3 -m pip install discord asyncio`
+
+       **Windows:** `py -m pip install discord asyncio`
+
+       **MacOS:** `python3 -m pip install discord asyncio`
+
 4. Go to https://discordapp.com/developers/applications and create your application, go to the bot section, and copy your token. Place it into the quotes on the last line of code in main.py, replacing the word **TOKEN**. 
 5. Go back to command prompt, and cd (navigate) to the directory where you've downloaded this project. Run the following command once you are in the directory on command prompt:
-  **Windows:** `py main.py`
-  **MacOS:** `python3 main.py`
+
+       **Windows:** `py main.py`
+       **MacOS:** `python3 main.py`
+  
 6. Success! If you see the bot saying that it's running with your username and user ID displayed, you've successfully setup the bot.
 
 ## How to configure the bot
