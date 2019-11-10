@@ -16,6 +16,7 @@ This is a Discord bot meant to handle tickets for a server.
 5. Go back to command prompt, and cd (navigate) to the directory where you've downloaded this project. Run the following command once you are in the directory on command prompt:
 
       **Windows:** `py main.py`
+      
       **MacOS:** `python3 main.py`
   
 6. Success! If you see the bot saying that it's running with your username and user ID displayed, you've successfully setup the bot.
