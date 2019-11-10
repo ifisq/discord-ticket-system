@@ -27,6 +27,6 @@ There's a variety of commands for administrators to use to configure the bot. Th
 
 A user with administrator level permissions sets the bot up. He automatically has access to every single command that the bot offers. However, he may have a few trusted moderators with a Moderator role that he wants to have access to add roles that can be pinged, or to add specific roles to tickets. He can do this via the `.addadminrole` command. This command gives these users access to all of the commands that the actual administrator has, but they do not gain administrative permissions for the *entire* server. 
 
-## Questions/Suggestions?
+## Questions/Bugs/Suggestions?
 
-Feel free to message me on Discord at Blue#9588. Also make sure to follow me on Twitter at https://twitter.com/ifisq and for my bigger projects at https://twitter.com/aurorisdev. If you have any suggestions for additions to the bot, feel free to open an issue or message me on Discord and I'll take a look at it. 
+If you have any suggestions for additions to the bot, find any bugs, or have any questions, feel free to open an issue or message me on Discord and I'll take a look at it. Please keep in mind when opening issues that I too do have a life, so if it takes me a few days to get to you, it's not because I'm trying to ignore you.  Also make sure to follow me on Twitter at https://twitter.com/ifisq and https://twitter.com/aurorisdev for any updates or new projects.
