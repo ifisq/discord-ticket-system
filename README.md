@@ -29,4 +29,4 @@ A user with administrator level permissions sets the bot up. He automatically ha
 
 ## Questions/Bugs/Suggestions?
 
-If you have any suggestions for additions to the bot, find any bugs, or have any questions, feel free to open an issue or message me on Discord and I'll take a look at it. Please keep in mind when opening issues that I too do have a life, so if it takes me a few days to get to you, it's not because I'm trying to ignore you.  Also make sure to follow me on Twitter at https://twitter.com/ifisq and https://twitter.com/aurorisdev for any updates or new projects.
+If you have any suggestions for additions to the bot, find any bugs, or have any questions, feel free to open an issue or message me on Discord and I'll take a look at it. For updates, follow me on Twitter at https://twitter.com/ifisq.
